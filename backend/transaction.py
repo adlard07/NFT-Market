@@ -1,4 +1,3 @@
-import jsonify
 from web3 import Web3
 from dataclasses import dataclass
 

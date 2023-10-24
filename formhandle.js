@@ -1,18 +1,39 @@
-document.querySelector('form').addEventListener('submit', function (event) {
-  event.preventDefault();
-  const formData = new FormData(event.target);
-  const inputElement = event.target.querySelector('input[type="text"]');
-  
-  // Include the identifier in the data to send to the server
-  formData.append('identifier', identifier);
-  
-  fetch('http://127.0.0.1:7000/order', {
-      method: 'POST',
-      body: JSON.stringify(Object.fromEntries(formData)),
-      headers: {
-          'Content-Type': 'application/json',
-      },
-  })
-  .then(response => response.text())
-  .then(data => console.log(data));
+document.addEventListener('DOMContentLoaded', function () {
+  // Find all the buttons with the 'data-id' attribute
+  const userInput = document.getElementById("image1-number");
+  const buttonsWithDataId = document.querySelectorAll('[data-id]');
+
+  buttonsWithDataId.forEach(function (button) {
+      button.addEventListener('click', function (event) { // Add the event parameter
+          // Prevent the default form submission behavior
+          event.preventDefault();
+
+          // Get the 'data-id' attribute value
+          const dataId = button.getAttribute('data-id');
+          console.log('Button clicked with data-id:', dataId);
+
+          // Get the 'image1-number' attribute value
+          const enteredValue = userInput.value;
+          console.log("User entered: " + enteredValue);
+
+          alert('Are you sure you want to send' + enteredValue + ' to address => ' + dataId)
+
+          // Send an HTTP request to your Flask API at http://127.0.0.1:5000/
+          fetch('http://127.0.0.1:7000/orders', { // Update the URL to your API endpoint
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ dataId: dataId, enteredValue: enteredValue }),
+          })
+          .then(response => response.json())
+          .then(data => {
+              // Handle the API response as needed
+              console.log(data);
+          })
+          .catch(error => {
+              console.error('API request failed:', error);
+          });
+      });
+  });
 });
