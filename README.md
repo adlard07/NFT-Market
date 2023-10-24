@@ -58,7 +58,7 @@ The NFT Market is an online platform for buying, selling, and trading non-fungib
 
 ### Usage
 
-1. Access the NFT Market web application via your browser at `http://localhost:3000` (or the provided URL).
+1. Access the NFT Market web application via your browser at `http://127.0.0.1:7000/order` (or the provided URL).
 
 2. Create an account or log in to start browsing, buying, or selling NFTs.
 
@@ -80,9 +80,7 @@ The NFT Market is an online platform for buying, selling, and trading non-fungib
 - Web3.js for Ethereum blockchain interaction.
 
 ## Contributors
-
-- [Your Name](https://github.com/your-username)
-- [Contributor Name](https://github.com/contributor-username)
+- [Adelard Dcunha](https://github.com/adlard07)
 
 ## License
 
