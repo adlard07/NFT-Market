@@ -82,10 +82,6 @@ The NFT Market is an online platform for buying, selling, and trading non-fungib
 ## Contributors
 - [Adelard Dcunha](https://github.com/adlard07)
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
 If you have any questions or feedback, feel free to contact us at adelarddcunha@gmail.com.
