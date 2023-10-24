@@ -11,27 +11,15 @@ cors = CORS(app)
 
 @app.route('/orders', methods=['POST'])
 def order():
-    hx_bid = pd.read_csv('bids.csv', header=0)
-    
     data = request.get_json()
-    
     acc2 = data.get('dataId')
     quantity = data.get('enteredValue')
     
     transfer = MyTransations()
     order = transfer.transaction(acc2, quantity)
-    
-    bids = pd.read_csv('bids.csv')
-    file_path = "bids.csv"
-
-    with open(file_path, 'a', newline='') as file:
-        writer = csv.writer(file)
-        writer.writerows(data)
-    
     order = jsonify({
             'Seller': acc2,
             'quantity': quantity,
-            'Bidder': bids,
             'Message': 'Transaction Sucessful!',
         })
     
