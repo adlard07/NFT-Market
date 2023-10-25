@@ -1,6 +1,3 @@
-Certainly! Here's an example of a README file for an NFT (Non-Fungible Token) market:
-
-```markdown
 # NFT Market
 
 ## Overview
@@ -89,6 +86,3 @@ If you have any questions or feedback, feel free to contact us at adelarddcunha@
 ---
 
 **NFT Market** - Your Gateway to the World of Unique Digital Assets
-```
-
-Remember to customize this README to your specific NFT market project, including details about technologies used, contributors, and licensing information. You may also want to include instructions for deployment, testing, or any additional features specific to your platform.
